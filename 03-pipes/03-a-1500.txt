@@ -1,0 +1,3 @@
+wc /etc/passwd -c | cut -d ' ' -f 1
+wc /etc/passwd -m | cut -d ' ' -f 1
+wc /etc/passwd -l | cut -d ' ' -f 1
