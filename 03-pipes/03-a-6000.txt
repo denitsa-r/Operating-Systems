@@ -1,0 +1,39 @@
+Копирайте <РЕПО>/exercises/data/emp.data във вашата home директория.
+Посредством awk, използвайки копирания файл за входнни данни, изведете:
+
+- общия брой редове
+cat emp.data | awk 'END{print NR}'
+- третия ред
+cat emp.data | awk 'NR == 3 {print}'
+- последното поле от всеки ред
+cat emp.data | awk '{print $NF}'
+- последното поле на последния ред
+cat emp.data | awk 'END{print $NF}'
+- всеки ред, който има повече от 4 полета
+cat emp.data | awk 'NF -gt 4 {print}'
+- всеки ред, чието последно поле е по-голямо от 4
+cat emp.data | awk '{if($3 > 4) print $0}'
+- общия брой полета във всички редове
+cat emp.data | awk '{print NF}'
+- броя редове, в които се среща низът Beth
+cat emp.data | awk '/Beth/ {print}' | awk 'END{print NR}'
+- най-голямото трето поле и редът, който го съдържа
+cat emp.data | awk 'BEGIN {max = 0; line = " "} {if ($3 > max) {max = $3; line = $0}} END {printf line" "max"\n"}'
+- всеки ред, който има поне едно поле
+cat emp.data | awk '{if (NF -gt 0) print $0}'
+- всеки ред, който има повече от 17 знака
+cat emp.data | awk 'length($0) > 17'
+- броя на полетата във всеки ред и самият ред
+cat emp.data | awk '{print NF " - " $0}'
+- първите две полета от всеки ред, с разменени места
+cat emp.data | awk '{print $2 "\t" $1}'
+- всеки ред така, че първите две полета да са с разменени места
+cat emp.data | awk '{temp = $1; $1 = $2; $2 = temp; print $0}'
+- всеки ред така, че на мястото на първото поле да има номер на реда
+cat emp.data | awk '{$1 = NR; print $0}'
+- всеки ред без второто поле
+cat emp.data | awk '{$2 = ""; print $0}'
+- за всеки ред, сумата от второ и трето поле
+cat emp.data | awk '{print $2 + $3}'
+- сумата на второ и трето поле от всеки ред
+cat emp.data | awk 'BEGIN {sum = 0} {sum += $2 + $3} END {print sum}'

@@ -1,0 +1,2 @@
+ find / -maxdepth 3 -type d >/dev/null 2>solution.txt 
+ cat solution.txt | cut -d ':' -f 2 | tr -d ' ' | tr -d "‘" | tr -d '’'
