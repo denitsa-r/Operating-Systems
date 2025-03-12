@@ -5,3 +5,8 @@
 
 изтрийте архива c_start.tar
 
+find ./etc -type f -iname "c*" -exec tar -cvf new-tar.tar {} '+'
+
+rm -rv new-tar-x/
+
+rm new-tar.tar

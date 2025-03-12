@@ -1,1 +1,3 @@
 Сортирайте /etc/passwd лексикографски по поле UserID.
+
+cat /etc/passwd | cut -d ":" -f 3 | sort
