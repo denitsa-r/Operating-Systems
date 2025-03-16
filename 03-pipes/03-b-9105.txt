@@ -1,0 +1,4 @@
+Да се преброят/изведат само песните на Beatles и Pink.
+
+find ./ -type f \( -name "Pink - *.ogg" -o -name "Beatles - *.ogg" \) | wc -l
+

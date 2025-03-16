@@ -1,0 +1,6 @@
+Да се направят директории с имената на уникалните групи. За улеснение, имената
+от две думи да се напишат слято:
+
+Beatles, PinkFloyd, Madness
+
+find ./ -type f -name "*.ogg" | cut -d '-' -f 1 | tr -d ' ' | sed 's/.\///' | sort | uniq | xargs -I {} mkdir {}
