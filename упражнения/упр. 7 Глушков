@@ -1,0 +1,15 @@
+awk 
+BEGIN -> извършва нещо преди същественото действие 
+END -> извършва нещо сле същественото действие
+$awk -F '<separator>'
+$awk -v '<nameVar>=<value>' '<do smth>' -променливи в awk 
+$awk ... '$5 ~ /<regex>/' -> regex с awk, по дефолт е с basic regex
+$tail /etc/passwd -n 30 | awk '{y=x '\n' $0; x=$0}' 'END {print $y}'
+by default '{print <$0>}'
+awk променливи NR, NF
+$cat /etc/passwd | awk '!($4 in a) {a[$4]; print $0}' -> hashmap
+
+$bg <pid> -> процес се праща в background-а 
+$fg <pid> -> връща процеса да бъде на преден план
+! да се прочете за bg/fg 
+$bg == & 
