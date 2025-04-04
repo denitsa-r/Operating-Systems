@@ -15,5 +15,5 @@ second=$(cat $1 | grep -E "^$3")
 
 if [[ ! -z ${second} ]] ; then
     new=$(diff <( echo ${first} | cut -d '=' -f2 | tr ' ' '\n' ) <( echo ${second} | cut -d '=' -f2 | tr ' ' '\n' ) | grep -E "^> .*" | cut -c 3- | tr '\n' ' ')
-    sed -ie "s|^${second}$|$( echo ${second} | cut -d '=' -f1)=${new}|" $1
+    sed -iE "s|^${second}$|$( echo ${second} | cut -d '=' -f1)=${new}|" $1
 fi

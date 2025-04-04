@@ -21,4 +21,4 @@ while read -r file; do
     else
         mv ${file} c
     fi
-done < <( find ./ -type f  )
+done < <( find ./ -maxdepth 1 -type f  )

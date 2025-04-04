@@ -10,9 +10,8 @@ if [[ ! -d $1 ]] ; then
     exit 2
 fi
 
-files=$(find "${1}" -type l)
-for file in ${files}; do
+while read -r file; do
     if [[ ! -e ${file} ]] ; then
         echo "${file}"
     fi
-done
+done < <(find "${1}" -type l)
