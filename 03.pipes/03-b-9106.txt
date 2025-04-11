@@ -2,3 +2,5 @@
 от две думи да се напишат слято:
 
 Beatles, PinkFloyd, Madness
+
+find . -type f | cut -d '-' -f 1 | tr -d './' | tr -d ' ' | sort | uniq | xargs -I{} mkdir {}

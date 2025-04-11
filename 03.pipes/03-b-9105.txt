@@ -1,1 +1,3 @@
 Да се преброят/изведат само песните на Beatles и Pink.
+
+find . -type f \( -iname "*Beatles -*" -o -iname "*Pink -*" \) | wc -l

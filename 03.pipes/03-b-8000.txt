@@ -3,3 +3,5 @@
 
 Студент е част от СИ, ако home директорията на този потребител (според
 <РЕПО>/exercises/data/mypasswd.txt) се намира в /home/SI директорията.
+
+ cat mypasswd.txt | grep "/home/SI/" | cut -d ':' -f1 | sort

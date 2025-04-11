@@ -4,5 +4,4 @@
 
 df -P > ./new-df-file
 
-cat new-df-file | tail -n +2
-ima nujda ot update
+cat new-df-file | tail -n +2 | sort -k2 -n

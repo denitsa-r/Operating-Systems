@@ -5,3 +5,8 @@
 Изведете този ред, двата преди него, и трите след него.
 
 Изведете *само* реда, който се намира 2 реда преди реда, съдържащ информация за вашия потребител.
+
+grep "$(whoami)" /etc/passwd
+grep -B 2 "$(whoami)" /etc/passwd
+grep -B 2 "$(whoami)" /etc/passwd
+grep -B 2 "$(whoami)" /etc/passwd | head -n 1

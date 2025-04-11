@@ -39,3 +39,5 @@ x-yyyyyy zz ww
 	- yyyyyy е името на диска
 	- zz е current temperature
 	- ww е max temperature
+
+ cp /srv/fmi-os/exercises/data/ssa-input.txt ~

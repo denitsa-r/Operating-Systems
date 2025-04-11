@@ -1,1 +1,3 @@
 Изведете командата на най-стария процес
+
+ps -eo command --sort=start_time | head -n2 | tail -n1

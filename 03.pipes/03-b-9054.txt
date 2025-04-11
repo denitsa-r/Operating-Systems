@@ -1,2 +1,8 @@
 Използвайки файл population.csv, намерете коя държава е на 42-ро място по
 население през 1969. Колко е населението й през тази година?
+
+grep ',1969,' population.csv | awk -F ',' '{print $NF}' | sort -nr | head -n 42 | tail -n 1 | xargs -I{} grep {} population.csv | cut -d ',' -f 1
+
+grep ',1969,' population.csv | awk -F ',' '{print $NF}' | sort -nr | head -n 42 | tail -n 1 | xargs -I{} grep {} population.csv | cut -d ',' -f 4
+
+grep ',1969,' population.csv | awk -F ',' '{print $NF}' | sort -nr | head -n 42 | tail -n 1 | xargs -I{} grep {} population.csv | awk -F ',' '{print $1 " : " $NF}'
